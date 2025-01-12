@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+    <style>
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-size: 24px; text-align: center; }
+        #inputText { font-size: 20px; padding: 10px; width: 80%; }
+        #displayArea p { font-size: 20px; }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Simple Chat With Yourself</h1>
+        <div id="displayArea"></div>
+        <input type="text" id="inputText" placeholder="Type..." onkeyup="if(event.key === 'Enter') displayText()">
+    </div>
+    <script>
+        function displayText() {
+            var input = document.getElementById("inputText").value;
+            if (input) {
+                var newMessage = document.createElement("p");
+                newMessage.textContent = input;
+                document.getElementById("displayArea").appendChild(newMessage);
+                document.getElementById("inputText").value = "";
+            }
+        }
+    </script>
+</body>
+</html>
