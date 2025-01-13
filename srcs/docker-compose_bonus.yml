@@ -89,6 +89,16 @@ services:
       - inception
     restart: always
 
+  resume:
+    container_name: resume
+    build: ./bonus/resume/.
+    image: resume:42
+    ports:
+      - "3000:3000"
+    networks:
+      - inception
+    restart: always
+
 volumes:
   wordpress:
     name: wordpress
