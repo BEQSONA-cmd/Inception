@@ -15,14 +15,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN mkdir -p /var/www
 
-RUN wget https://wordpress.org/latest.tar.gz && \
-    tar -xzf latest.tar.gz -C /var/www/ && \
-    rm latest.tar.gz
-
 RUN mkdir -p /run/php && \
     sed -i "s/;daemonize = yes/daemonize = no/" /etc/php/7.4/fpm/php-fpm.conf
-
-RUN chown -R www-data:www-data /var/www/wordpress
 
 RUN echo "listen = 9000" >> /etc/php/7.4/fpm/pool.d/www.conf
 

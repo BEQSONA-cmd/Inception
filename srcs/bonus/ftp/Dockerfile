@@ -11,9 +11,6 @@ RUN useradd -m ftpuser && \
     echo "ftpuser:${FTP_PASSWORD}" | chpasswd
 
 RUN mkdir -p /home/ftpuser/wordpress && \
-    chown -R ftpuser:ftpuser /home/ftpuser
-
-RUN mkdir -p /home/ftpuser/wordpress && \
     chown -R ftpuser:ftpuser /home/ftpuser/wordpress
 
 RUN mkdir -p /var/run/vsftpd/empty
